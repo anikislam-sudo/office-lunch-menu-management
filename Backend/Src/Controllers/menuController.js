@@ -1,4 +1,4 @@
-const db = require("../Models");
+const db = require("../Models/index");
 const Menu = db.Menu;
 
 const addMenuOption = async (req, res) => {

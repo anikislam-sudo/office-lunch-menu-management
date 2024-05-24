@@ -18,16 +18,10 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 
-;
+
 db.User = require('../Models/user')(sequelize, DataTypes);
 db.Menu = require('../Models/menu')(sequelize, DataTypes);
 
-// Sync Models with Database
-sequelize.sync()
-  .then(() => {
-    console.log('Database synchronized');
-  })
-  .catch(err => {
-    console.error('Unable to synchronize database:', err);
-  });
+
+
 module.exports = db;

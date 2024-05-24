@@ -1,4 +1,4 @@
-const db = require("../Models");
+const db = require("../Models/index");
 const User = db.User;
 
 const signup = async (req, res) => {
