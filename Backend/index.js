@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const sequelize = new Sequelize(config.development);
+
 sequelize
   .authenticate()
   .then(() => {
@@ -26,17 +27,18 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 
-// db.Menu = require('./menu')(sequelize, DataTypes);
+;
 db.User = require('./Src/Models/user')(sequelize, DataTypes);
+db.Menu = require('./Src/Models/menu')(sequelize, DataTypes);
 
 // Sync Models with Database
-// sequelize.sync()
-//   .then(() => {
-//     console.log('Database synchronized');
-//   })
-//   .catch(err => {
-//     console.error('Unable to synchronize database:', err);
-//   });
+sequelize.sync()
+  .then(() => {
+    console.log('Database synchronized');
+  })
+  .catch(err => {
+    console.error('Unable to synchronize database:', err);
+  });
 module.exports = db;
 app.get("/",(req,res)=>{
     res.send("hello world!");
