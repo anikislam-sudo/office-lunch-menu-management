@@ -21,7 +21,17 @@ const getMenuByDate = async (req, res) => {
   }
 };
 
+const getAllMenus = async (req, res) => {
+  try {
+    const allMenus = await Menu.findAll();
+    res.status(200).json(allMenus);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   addMenuOption,
   getMenuByDate,
+  getAllMenus
 };

@@ -7,6 +7,8 @@ import Login from './Pages/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/Home';
+import AdminView from './Components/Admin/AdminView';
+import EmployeeView from './Components/Employee/EmployeeView';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />} />
+      <Route path="/admin" element={<AdminView />} />
+        <Route path="/employee" element={<EmployeeView />} />
     </Routes>
     <ToastContainer />
   </div>
