@@ -16,14 +16,14 @@ app.use(cors());
 app.use("/api", menuRoutes);
 app.use("/api", userRoutes);
 
-db.sequelize
-  .sync()
-  .then(() => {
-    console.log("Database synced");
-  })
-  .catch((err) => {
-    console.error("Error syncing database:", err);
-  });
+// db.sequelize
+//   .sync()
+//   .then(() => {
+//     console.log("Database synced");
+//   })
+//   .catch((err) => {
+//     console.error("Error syncing database:", err);
+//   });
 app.get("/", (req, res) => {
   res.send("hello world!");
 });
